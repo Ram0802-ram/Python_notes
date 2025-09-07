@@ -1,5 +1,5 @@
 class Sbi_Bank():
-    IFSC = SBIN0012670
+    IFSC_Code = 'SBIN0012670'
     Branch_Code = 12670
     Location = 'Chakrayapet'
     def __init__(self,Name,Acc_no,Mob_no,Bal,Place,Pin):
@@ -10,7 +10,7 @@ class Sbi_Bank():
         self.Place = Place
         self.Pin = Pin
     def details(self):
-        print(f'Name = {self.name}')
+        print(f'Name = {self.Name}')
         print(f'Account Number = {self.Acc_no}')
         print(f'Mobile Number = {self.Mob_no}')
         print(f'Balance = {self.Bal}')
@@ -19,7 +19,7 @@ class Sbi_Bank():
         count = 3
         while count != 0:
             print(f'Number of attempts are {count}')
-            if self.Password() == self.Pin:
+            if self.Take_password() == self.Pin:
                 print(f'Available Balance is {self.Bal}')
                 print(f'Transaction Done')
                 break
@@ -32,7 +32,7 @@ class Sbi_Bank():
         count = 3
         while count != 0:
             print(f'Number of attempts are {count}')
-            if self.Password() == self.Pin:
+            if self.Take_password() == self.Pin:
                 Money = int(input('Enter amount to Deposite: '))
                 if 100<= Money <= 300000:
                     if Money % 100 == 0:
@@ -53,7 +53,7 @@ class Sbi_Bank():
         count = 3
         while count != 0:
             print(f'Number of attempts are {count}')
-            if self.Password() == self.Pin:
+            if self.Take_password() == self.Pin:
                 Money = int(input('Enter amount to Withdrawn: '))
                 if Money <= self.Bal:
                     if 100 <= Money <= 20000:
@@ -80,8 +80,8 @@ class Sbi_Bank():
     def Take_password():
         password = int(input('enter 4-digit pin : '))
         return password
-Cust1 = Sbi_Bank('Ram',7787338345,779474737929,1000000,2299)
-Cust2 = Sbi_Bank('Ravi',7787338421,779474227929,837000,2309)
-Cust3 = Sbi_Bank('Raju',7787333373,779473457929,500000,2563)
-Cust4 = Sbi_Bank('Raja',7787336573,779472597929,250000,8790)
-Cust1.Deposite()
+Cust1 = Sbi_Bank('Ram',7787338345,779474737929,1000000,'kadapa',2299)
+Cust2 = Sbi_Bank('Ravi',7787338421,779474227929,837000,'Vempalli',2309)
+Cust3 = Sbi_Bank('Raju',7787333373,779473457929,500000,'Chakrayapet',2563)
+Cust4 = Sbi_Bank('Raja',7787336573,779472597929,250000,'Pulivendula',8790)
+Cust4.Withdrawn()
