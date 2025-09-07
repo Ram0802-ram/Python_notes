@@ -73,5 +73,15 @@ class Sbi_Bank():
                 count -= 1
         else:
             print('Try after 24 hours')
-        
-        
+    @classmethod
+    def Change_loc(cls):
+        cls.location = 'Delhi'
+    @staticmethod
+    def Take_password():
+        password = int(input('enter 4-digit pin : '))
+        return password
+Cust1 = Sbi_Bank('Ram',7787338345,779474737929,1000000,2299)
+Cust2 = Sbi_Bank('Ravi',7787338421,779474227929,837000,2309)
+Cust3 = Sbi_Bank('Raju',7787333373,779473457929,500000,2563)
+Cust4 = Sbi_Bank('Raja',7787336573,779472597929,250000,8790)
+Cust1.Deposite()
